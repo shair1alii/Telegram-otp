@@ -23,5 +23,7 @@ jobs:
           pip install flask cloudscraper beautifulsoup4 brotli
 
       - name: Run Bot
-        run: |
-          python app.py
+  env:
+    COOKIES_JSON: ${{ secrets.COOKIES_JSON }}
+  run: |
+    python app.py
